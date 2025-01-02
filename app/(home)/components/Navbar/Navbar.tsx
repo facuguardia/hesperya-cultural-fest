@@ -12,7 +12,7 @@ export function Navbar() {
     <nav
       className={`fixed w-full z-20 top-0 start-0 transition-all duration-300 ${
         scrolled
-          ? "bg-gray-900/95 backdrop-blur-sm py-2"
+          ? "bg-gray-900/95 backdrop-blur-sm py-6"
           : "bg-transparent py-4"
       }`}
     >
@@ -86,6 +86,14 @@ export function Navbar() {
                 className="block py-2 px-3 text-white hover:text-primary transition-colors duration-300"
               >
                 Artistas
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#"
+                className="block py-2 px-3 text-white hover:text-primary transition-colors duration-300"
+              >
+                Actividades
               </Link>
             </li>
             <li>

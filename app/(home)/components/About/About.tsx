@@ -31,7 +31,7 @@ const StatItem: FC<StatItemProps> = ({ number, label }) => (
 
 export const About = () => {
   return (
-    <section className="bg-black text-white p-8 md:p-12">
+    <section className="bg-black text-white pt-32">
       <div className="max-w-6xl mx-auto flex justify-around items-center gap-12">
         <motion.div
           initial={{ opacity: 0, x: -50 }}

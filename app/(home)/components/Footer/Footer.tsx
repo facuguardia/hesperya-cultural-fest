@@ -28,9 +28,9 @@ const footerLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-black text-white pt-16 pb-8">
+    <footer className="bg-black text-white pt-16 pb-8 border-t border-white/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-3 content-center gap-12 pb-12 border-b border-white/10">
           {/* Logo y descripción */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -52,7 +52,7 @@ export function Footer() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-4"
+            className="space-y-4 text-center"
           >
             <h4 className="font-title text-xl font-bold">Enlaces rápidos</h4>
             <ul className="space-y-2">
@@ -74,10 +74,10 @@ export function Footer() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-4"
+            className="space-y-4 text-right"
           >
             <h4 className="font-title text-xl font-bold">Síguenos</h4>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 justify-end">
               {socialLinks.map(({ icon: Icon, href, label }) => (
                 <Link
                   key={label}
