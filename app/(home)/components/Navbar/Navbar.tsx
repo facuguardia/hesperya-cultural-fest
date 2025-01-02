@@ -1,27 +1,36 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-
+import { useScroll } from "../../hooks/useScroll";
 import logo from "@/public/images/logo_hesperya.png";
 
 export function Navbar() {
+  const scrolled = useScroll(50);
+
   return (
-    <nav className="bg-gray-900 fixed w-full z-20 top-0 start-0">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav
+      className={`fixed w-full z-20 top-0 start-0 transition-all duration-300 ${
+        scrolled
+          ? "bg-gray-900/95 backdrop-blur-sm py-2"
+          : "bg-transparent py-4"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between px-4">
         <Link
-          href="https://flowbite.com/"
-          className="flex items-center space-x-3 rtl:space-x-reverse"
+          href="/"
+          className="flex items-center space-x-3 rtl:space-x-reverse transition-transform duration-300"
         >
           <Image
             src={logo}
-            width={200}
+            width={scrolled ? 150 : 200}
             height={300}
             alt="Hesperya Logo"
+            className="transition-all duration-300"
           />
         </Link>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <div
-            className="px-4 py-2 text-black font-medium rounded-lg text-sm text-center bg-primary hover:bg-primary/80 transition-colors duration-300 ease-in-out cursor-pointer"
-          >
+          <div className="px-4 py-2 text-black font-nav font-medium rounded-lg text-sm text-center bg-primary hover:bg-primary/80 transition-colors duration-300 ease-in-out cursor-pointer">
             Compra tu ticket
           </div>
           <button
@@ -41,9 +50,9 @@ export function Navbar() {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M1 1h15M1 7h15M1 13h15"
               />
             </svg>
@@ -53,11 +62,11 @@ export function Navbar() {
           className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
           id="navbar-sticky"
         >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <ul className="flex flex-col p-4 md:p-0 mt-4 font-nav md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-transparent">
             <li>
               <Link
                 href="#"
-                className="block py-2 px-3 text-white bg-primary rounded md:bg-transparent md:text-primary md:p-0 md:dark:text-primary"
+                className="block py-2 px-3 text-white hover:text-primary transition-colors duration-300"
                 aria-current="page"
               >
                 Inicio
@@ -66,7 +75,7 @@ export function Navbar() {
             <li>
               <Link
                 href="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0 md:dark:hover:text-primary dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className="block py-2 px-3 text-white hover:text-primary transition-colors duration-300"
               >
                 Nosotros
               </Link>
@@ -74,7 +83,7 @@ export function Navbar() {
             <li>
               <Link
                 href="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0 md:dark:hover:text-primary dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className="block py-2 px-3 text-white hover:text-primary transition-colors duration-300"
               >
                 Artistas
               </Link>
@@ -82,7 +91,7 @@ export function Navbar() {
             <li>
               <Link
                 href="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary md:p-0 md:dark:hover:text-primary dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className="block py-2 px-3 text-white hover:text-primary transition-colors duration-300"
               >
                 Contacto
               </Link>

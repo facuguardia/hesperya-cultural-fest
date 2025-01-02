@@ -15,6 +15,10 @@ export default {
         primary: "#ddd363",
         secondary: "#000000",
       },
+      fontFamily: {
+        title: ["var(--font-space-grotesk)"],
+        nav: ["var(--font-outfit)"],
+      },
     },
   },
   plugins: [],

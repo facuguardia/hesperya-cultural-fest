@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -63,13 +62,13 @@ export function Hero() {
             <div className="space-y-2">
               <motion.h1
                 variants={fadeInUp}
-                className="text-9xl font-bold text-white tracking-tight"
+                className="font-title text-9xl font-bold text-white tracking-tight"
               >
                 Cultural
               </motion.h1>
               <motion.h2
                 variants={fadeInUp}
-                className="text-8xl font-bold text-white tracking-tight"
+                className="font-title text-8xl font-bold text-white tracking-tight"
               >
                 Fest
               </motion.h2>
@@ -79,14 +78,14 @@ export function Hero() {
               <div className="flex gap-52">
                 <motion.p
                   variants={fadeInUp}
-                  className="text-3xl font-medium text-white"
+                  className="font-sans text-3xl font-medium text-white"
                 >
                   28-29 <span className="text-primary">/</span> <br />{" "}
                   <span className="font-medium text-2xl">Diciembre</span>
                 </motion.p>
                 <motion.p
                   variants={fadeInUp}
-                  className="text-3xl font-medium text-white"
+                  className="font-sans text-3xl font-medium text-white"
                 >
                   Motril <span className="text-primary">/</span> <br />{" "}
                   <span className="font-medium text-2xl">Granada</span>
@@ -96,7 +95,7 @@ export function Hero() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-3 bg-primary hover:bg-primary/80 transition-colors text-black rounded-full text-lg font-medium"
+                  className="font-sans px-8 py-3 bg-primary hover:bg-primary/80 transition-colors text-black rounded-full text-lg font-medium"
                 >
                   Comprar entrada
                 </motion.button>
