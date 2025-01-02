@@ -10,6 +10,7 @@ export default {
     extend: {
       backgroundImage: {
         "hero-image": "url('/images/bg-hero.jpg')",
+        "cta-image": "url('/images/bg-cta.jpeg')",
       },
       colors: {
         primary: "#ddd363",

@@ -32,7 +32,7 @@ const StatItem: FC<StatItemProps> = ({ number, label }) => (
 export const About = () => {
   return (
     <section className="bg-black text-white p-8 md:p-12">
-      <div className="max-w-6xl mx-auto flex justify-evenly items-center gap-12">
+      <div className="max-w-6xl mx-auto flex justify-around items-center gap-12">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -45,7 +45,7 @@ export const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-3xl font-bold mb-6"
+            className="text-4xl font-title font-bold text-white"
           >
             Sobre nosotros
           </motion.h2>
@@ -83,7 +83,7 @@ export const About = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col justify-center items-start gap-4"
+          className="flex flex-col justify-evenly items-start gap-4"
         >
           <StatItem number="2" label="Días" />
           <StatItem number="3" label="Escenarios" />
