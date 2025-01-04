@@ -14,7 +14,7 @@ export function Navbar() {
     <nav
       className={`fixed w-full z-20 top-0 start-0 transition-all duration-300 ${
         scrolled
-          ? "bg-gray-900/95 backdrop-blur-sm py-6"
+          ? "bg-gray-900/60 backdrop-blur-sm py-6"
           : "bg-transparent py-4"
       }`}
     >
@@ -64,7 +64,7 @@ export function Navbar() {
             isMenuOpen ? "block" : "hidden"
           } w-full md:block md:w-auto md:order-1`}
         >
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-nav md:flex-row md:space-x-8 md:mt-0 md:border-0">
+          <ul className="flex flex-col p-4 md:p-0 mt-4 font-title md:flex-row md:space-x-8 md:mt-0 md:border-0">
             <li>
               <Link
                 href="#"

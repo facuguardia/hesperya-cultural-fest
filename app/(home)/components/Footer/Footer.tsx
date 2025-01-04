@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import {
   RiFacebookFill,
   RiInstagramLine,
@@ -27,11 +28,23 @@ const footerLinks = [
 ];
 
 export function Footer() {
+  const [email, setEmail] = useState("");
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      setIsSubscribed(true);
+      setEmail("");
+      setTimeout(() => setIsSubscribed(false), 3000);
+    }
+  };
+
   return (
     <footer className="bg-black text-white pt-16 pb-8 border-t border-white/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 content-center gap-12 pb-12 border-b border-white/10">
-          {/* Logo y descripción */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-white/10">
+          {/* Columna 1: Logo y descripción */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -43,19 +56,24 @@ export function Footer() {
               alt="Cultural Fest"
               width={200}
               height={200}
-              className="w-full h-full object-contain"
+              className="w-full max-w-[200px] h-auto object-contain"
             />
+            <p className="text-gray-400 text-sm">
+              El festival cultural más grande de Andalucía, donde la música y la cultura se unen para crear experiencias inolvidables.
+            </p>
           </motion.div>
 
-          {/* Enlaces rápidos */}
+          {/* Columna 2: Enlaces rápidos */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-4 text-center"
+            className="space-y-4"
           >
-            <h4 className="font-title text-xl font-bold">Enlaces rápidos</h4>
-            <ul className="space-y-2">
+            <h4 className="font-title text-xl font-bold text-center">
+              Enlaces rápidos
+            </h4>
+            <ul className="space-y-2 text-center">
               {footerLinks.map((link) => (
                 <li key={link.title}>
                   <Link
@@ -69,25 +87,65 @@ export function Footer() {
             </ul>
           </motion.div>
 
-          {/* Redes sociales */}
+          {/* Columna 3: Redes sociales y Newsletter */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="space-y-4 text-right"
+            className="space-y-8"
           >
-            <h4 className="font-title text-xl font-bold">Síguenos</h4>
-            <div className="flex space-x-4 justify-end">
-              {socialLinks.map(({ icon: Icon, href, label }) => (
-                <Link
-                  key={label}
-                  href={href}
-                  className="text-gray-400 hover:text-primary transition-colors"
-                  aria-label={label}
+            {/* Redes sociales */}
+            <div className="space-y-4">
+              <h4 className="font-title text-xl font-bold">Síguenos</h4>
+              <div className="flex space-x-4">
+                {socialLinks.map(({ icon: Icon, href, label }) => (
+                  <Link
+                    key={label}
+                    href={href}
+                    className="text-gray-400 hover:text-primary transition-colors"
+                    aria-label={label}
+                  >
+                    <Icon size={24} />
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Newsletter */}
+            <div className="space-y-4">
+              <h4 className="font-title text-xl font-bold">Newsletter</h4>
+              <p className="text-gray-400 text-sm">
+                Suscríbete para recibir las últimas novedades y ofertas especiales.
+              </p>
+              <form onSubmit={handleSubmit} className="space-y-3">
+                <div className="relative">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Tu email"
+                    className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors"
+                    required
+                  />
+                </div>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  type="submit"
+                  className="w-full px-4 py-2 bg-primary hover:bg-primary/80 text-black font-medium rounded-lg transition-colors"
                 >
-                  <Icon size={24} />
-                </Link>
-              ))}
+                  Suscribirse
+                </motion.button>
+                {isSubscribed && (
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="text-sm text-primary"
+                  >
+                    ¡Gracias por suscribirte!
+                  </motion.p>
+                )}
+              </form>
             </div>
           </motion.div>
         </div>
