@@ -68,7 +68,7 @@ export function Navbar() {
           <ul className="flex flex-col p-4 md:p-0 mt-4 font-title md:flex-row md:space-x-8 md:mt-0 md:border-0">
             <li>
               <Link
-                href="#"
+                href="/"
                 className="block py-2 px-3 text-white hover:text-primary transition-colors duration-300"
                 aria-current="page"
               >
@@ -77,7 +77,7 @@ export function Navbar() {
             </li>
             <li>
               <Link
-                href="#"
+                href="#about"
                 className="block py-2 px-3 text-white hover:text-primary transition-colors duration-300"
               >
                 Nosotros
@@ -85,7 +85,7 @@ export function Navbar() {
             </li>
             <li>
               <Link
-                href="#"
+                href="#artists"
                 className="block py-2 px-3 text-white hover:text-primary transition-colors duration-300"
               >
                 Artistas
@@ -93,7 +93,7 @@ export function Navbar() {
             </li>
             <li>
               <Link
-                href="#"
+                href="#activities"
                 className="block py-2 px-3 text-white hover:text-primary transition-colors duration-300"
               >
                 Actividades
@@ -101,7 +101,7 @@ export function Navbar() {
             </li>
             <li>
               <Link
-                href="#"
+                href="#contact"
                 className="block py-2 px-3 text-white hover:text-primary transition-colors duration-300"
               >
                 Contacto

@@ -42,7 +42,7 @@ export function Hero() {
   ];
 
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-black">
+    <div id="home" className="relative w-full h-screen overflow-hidden bg-black">
       <motion.div
         {...animations.scaleIn}
         style={{ y: backgroundY, opacity }}

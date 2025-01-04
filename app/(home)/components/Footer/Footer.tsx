@@ -21,11 +21,11 @@ const socialLinks = [
 ];
 
 const footerLinks = [
-  { title: "Inicio", href: "#" },
-  { title: "Nosotros", href: "#" },
-  { title: "Artistas", href: "#" },
-  { title: "Actividades", href: "#" },
-  { title: "Contacto", href: "#" },
+  { title: "Inicio", href: "/" },
+  { title: "Nosotros", href: "#about" },
+  { title: "Artistas", href: "#artists" },
+  { title: "Actividades", href: "#activities" },
+  { title: "Contacto", href: "#contact" },
 ];
 
 export function Footer() {
