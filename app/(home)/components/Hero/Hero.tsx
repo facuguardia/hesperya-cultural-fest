@@ -43,7 +43,7 @@ export function Hero() {
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-full">
-        <div className="relative z-10 h-full flex items-center">
+        <div className="relative z-10 h-full flex items-center pt-16">
           <div className="w-full space-y-12">
             {/* Título principal */}
             <div>
@@ -82,7 +82,9 @@ export function Hero() {
               </div>
 
               <motion.div {...animations.slideUp} transition={{ delay: 0.4 }}>
-                <Button type="submit" size="lg">Compra tu ticket</Button>
+                <Button type="submit" size="lg">
+                  Compra tu ticket
+                </Button>
               </motion.div>
             </motion.div>
           </div>
