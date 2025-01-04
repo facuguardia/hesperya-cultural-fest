@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { RiMailLine, RiMapPinLine, RiPhoneLine } from "react-icons/ri";
+import { Button } from "../Button";
 
 interface ContactInfo {
   icon: React.ElementType;
@@ -133,13 +134,9 @@ export function Contact() {
                   placeholder="Tu mensaje"
                 ></textarea>
               </div>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full px-8 py-4 bg-primary hover:bg-primary/80 text-black font-medium rounded-full transition-colors"
-              >
+              <Button type="submit" fullWidth>
                 Enviar mensaje
-              </motion.button>
+              </Button>
             </form>
           </motion.div>
         </motion.div>

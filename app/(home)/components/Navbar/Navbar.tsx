@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useScroll } from "../../hooks/useScroll";
 import logo from "@/public/images/logo.png";
+import { Button } from "../Button";
 
 export function Navbar() {
   const scrolled = useScroll(50);
@@ -33,9 +34,9 @@ export function Navbar() {
         </Link>
 
         <div className="flex md:order-2">
-          <button className="hidden md:block px-4 py-2 text-black font-nav font-medium rounded-lg text-sm text-center bg-primary hover:bg-primary/80 transition-colors duration-300 ease-in-out">
+        <Button type="submit" fullWidth>
             Compra tu ticket
-          </button>
+          </Button>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-gray-700 focus:outline-none"

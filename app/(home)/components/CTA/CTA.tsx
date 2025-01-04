@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Button } from "../Button";
 
 export function CTA() {
   return (
@@ -36,9 +37,9 @@ export function CTA() {
             whileTap={{ scale: 0.95 }}
             className="inline-block"
           >
-            <button className="px-8 py-4 bg-primary hover:bg-primary/80 text-black font-nav text-lg font-medium rounded-full transition-colors">
-              Comprar entradas ahora
-            </button>
+            <Button type="submit" fullWidth>
+              Compra tu ticket
+            </Button>
           </motion.div>
 
           <div className="text-sm text-gray-400">

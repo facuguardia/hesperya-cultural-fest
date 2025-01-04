@@ -8,6 +8,7 @@ import {
   RiYoutubeFill,
 } from "react-icons/ri";
 import { motion } from "framer-motion";
+import { Button } from "../Button";
 
 // Definiciones de animación
 const animations = {
@@ -97,13 +98,9 @@ export function Hero() {
                 </motion.p>
               </div>
               <motion.div variants={animations.fadeInUp} className="pt-12">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="font-sans px-8 py-3 bg-primary hover:bg-primary/80 transition-colors text-black rounded-full text-lg font-medium"
-                >
-                  Comprar entrada
-                </motion.button>
+                <Button type="submit">
+                  Compra tu ticket
+                </Button>
               </motion.div>
             </motion.div>
           </div>

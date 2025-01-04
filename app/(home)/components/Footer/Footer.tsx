@@ -11,6 +11,7 @@ import {
   RiYoutubeFill,
 } from "react-icons/ri";
 import logo from "@/public/images/logo.png";
+import { Button } from "../Button";
 
 const socialLinks = [
   { icon: RiFacebookFill, href: "#", label: "Facebook" },
@@ -59,7 +60,8 @@ export function Footer() {
               className="w-full max-w-[200px] h-auto object-contain"
             />
             <p className="text-gray-400 text-sm">
-              El festival cultural más grande de Andalucía, donde la música y la cultura se unen para crear experiencias inolvidables.
+              El festival cultural más grande de Andalucía, donde la música y la
+              cultura se unen para crear experiencias inolvidables.
             </p>
           </motion.div>
 
@@ -115,7 +117,8 @@ export function Footer() {
             <div className="space-y-4">
               <h4 className="font-title text-xl font-bold">Newsletter</h4>
               <p className="text-gray-400 text-sm">
-                Suscríbete para recibir las últimas novedades y ofertas especiales.
+                Suscríbete para recibir las últimas novedades y ofertas
+                especiales.
               </p>
               <form onSubmit={handleSubmit} className="space-y-3">
                 <div className="relative">
@@ -128,14 +131,9 @@ export function Footer() {
                     required
                   />
                 </div>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  type="submit"
-                  className="w-full px-4 py-2 bg-primary hover:bg-primary/80 text-black font-medium rounded-lg transition-colors"
-                >
+                <Button type="submit" fullWidth>
                   Suscribirse
-                </motion.button>
+                </Button>
                 {isSubscribed && (
                   <motion.p
                     initial={{ opacity: 0 }}
