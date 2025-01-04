@@ -15,7 +15,7 @@ export function Navbar() {
     <nav
       className={`fixed w-full z-20 top-0 start-0 transition-all duration-300 ${
         scrolled
-          ? "bg-gray-900/60 backdrop-blur-sm py-6"
+          ? "bg-gray-900/60 backdrop-blur-sm shadow-lg shadow-black/20 py-6"
           : "bg-transparent py-4"
       }`}
     >
@@ -34,7 +34,7 @@ export function Navbar() {
         </Link>
 
         <div className="flex md:order-2">
-        <Button type="submit" fullWidth>
+          <Button type="submit" fullWidth>
             Compra tu ticket
           </Button>
           <button

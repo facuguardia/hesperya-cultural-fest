@@ -82,7 +82,7 @@ export function Hero() {
               </div>
 
               <motion.div {...animations.slideUp} transition={{ delay: 0.4 }}>
-                <Button type="submit">Compra tu ticket</Button>
+                <Button type="submit" size="lg">Compra tu ticket</Button>
               </motion.div>
             </motion.div>
           </div>
