@@ -8,14 +8,19 @@ import {
   RiTwitterFill,
   RiYoutubeFill,
 } from "react-icons/ri";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "../Button";
 
 const animations = {
   fadeIn: {
     initial: { opacity: 0 },
     animate: { opacity: 1 },
-    transition: { duration: 1.2, ease: "easeOut" },
+    transition: { duration: 1.5, ease: "easeOut" },
+  },
+  scaleIn: {
+    initial: { scale: 1.2, opacity: 0 },
+    animate: { scale: 1, opacity: 1 },
+    transition: { duration: 2, ease: [0.6, 0.01, -0.05, 0.95] },
   },
   slideUp: {
     initial: { y: 30, opacity: 0 },
@@ -25,6 +30,10 @@ const animations = {
 };
 
 export function Hero() {
+  const { scrollY } = useScroll();
+  const backgroundY = useTransform(scrollY, [0, 500], ["0%", "20%"]);
+  const opacity = useTransform(scrollY, [0, 500], [1, 0.5]);
+
   const socialLinks = [
     { id: "fb-social", icon: RiFacebookFill, href: "#", label: "Facebook" },
     { id: "ig-social", icon: RiInstagramLine, href: "#", label: "Instagram" },
@@ -34,16 +43,22 @@ export function Hero() {
 
   return (
     <div className="relative w-full h-screen overflow-hidden bg-black">
-      {/* Imagen de fondo con overlay gradiente */}
       <motion.div
-        {...animations.fadeIn}
-        className="absolute inset-0 bg-hero-image bg-cover bg-center"
+        {...animations.scaleIn}
+        style={{ y: backgroundY, opacity }}
+        className="absolute inset-0"
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/80" />
+        <motion.div
+          className="absolute inset-0 bg-hero-image bg-cover bg-center transform"
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 2, ease: "easeOut" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/50 to-black/80" />
       </motion.div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-full">
-        <div className="relative z-10 h-full flex items-center pt-16 md:pt-24">
+        <div className="relative z-10 h-full flex items-center pt-16 md:pt-20 lg:pt-32">
           <div className="w-full space-y-12">
             {/* Título principal */}
             <div>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 interface Artist {
+  id: number;
   name: string;
   image: string;
   category?: string;
@@ -9,41 +10,49 @@ interface Artist {
 
 const artists: Artist[] = [
   {
+    id: 1,
     name: "Tino JJ",
     image: "/images/art-4.jpg",
     category: "EDM",
   },
   {
+    id: 2,
     name: "Megara",
     image: "/images/art-5.jpg",
     category: "EDM",
   },
   {
+    id: 3,
     name: "Talim",
     image: "/images/art-6.jpg",
     category: "Electronic",
   },
   {
+    id: 4,
     name: "El Don",
     image: "/images/art-7.jpg",
     category: "Electronic",
   },
   {
+    id: 5,
     name: "Tino JJ",
     image: "/images/art-4.jpg",
     category: "EDM",
   },
   {
+    id: 6,
     name: "Megara",
     image: "/images/art-5.jpg",
     category: "EDM",
   },
   {
+    id: 7,
     name: "Talim",
     image: "/images/art-6.jpg",
     category: "Electronic",
   },
   {
+    id: 8,
     name: "El Don",
     image: "/images/art-7.jpg",
     category: "Electronic",
@@ -62,7 +71,7 @@ export function ArtistGrid() {
         >
           {artists.map((artist, index) => (
             <motion.div
-              key={artist.name}
+              key={artist.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
