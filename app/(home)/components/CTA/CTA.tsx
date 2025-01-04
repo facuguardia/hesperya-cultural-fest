@@ -11,7 +11,7 @@ export function CTA() {
           whileInView={{ opacity: 0.4 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="absolute inset-0 bg-[url('/images/cta-background.jpg')] bg-cover bg-center"
+          className="absolute inset-0 bg-cta-image bg-cover bg-center"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/40" />
       </div>

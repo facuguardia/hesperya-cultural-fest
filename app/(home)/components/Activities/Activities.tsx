@@ -48,22 +48,21 @@ const images = [
 
 export function Activities() {
   return (
-    <section className="bg-black py-20">
+    <section className="bg-black py-12 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Columna de texto */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="space-y-8"
+            className="space-y-6 md:space-y-8"
           >
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl font-title font-bold text-white"
+              className="text-3xl md:text-4xl font-title font-bold text-white"
             >
               Diversión y <br />
               entretenimiento
@@ -73,14 +72,14 @@ export function Activities() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="text-gray-300 text-lg"
+              className="text-gray-300 text-base md:text-lg"
             >
               En Cultural Fest encontrarás una gran variedad de actividades,
               atracciones, food trucks, bares y zonas lounge para que disfrutes
               de una experiencia única.
             </motion.p>
 
-            <div className="space-y-6">
+            <div className="space-y-4 md:space-y-6">
               {activities.map((activity, index) => (
                 <motion.div
                   key={activity.number}
@@ -88,12 +87,12 @@ export function Activities() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="flex items-center gap-4"
+                  className="flex items-center gap-3 md:gap-4"
                 >
-                  <span className="text-4xl font-bold text-primary">
+                  <span className="text-3xl md:text-4xl font-bold text-primary">
                     {activity.number}
                   </span>
-                  <span className="text-white text-lg">
+                  <span className="text-white text-base md:text-lg">
                     {activity.description}
                   </span>
                 </motion.div>
@@ -101,13 +100,12 @@ export function Activities() {
             </div>
           </motion.div>
 
-          {/* Columna de imágenes */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="grid grid-cols-2 gap-4"
+            className="grid grid-cols-2 gap-3 md:gap-4"
           >
             {images.map((image, index) => (
               <motion.div

@@ -9,36 +9,37 @@ import {
 } from "react-icons/ri";
 import { motion } from "framer-motion";
 
-export function Hero() {
-  const socialLinks = [
-    { icon: RiFacebookFill, href: "#", label: "Facebook" },
-    { icon: RiInstagramLine, href: "#", label: "Instagram" },
-    { icon: RiTwitterFill, href: "#", label: "Twitter" },
-    { icon: RiYoutubeFill, href: "#", label: "YouTube" },
-  ];
-
-  const fadeInUp = {
+// Definiciones de animación
+const animations = {
+  fadeInUp: {
     initial: { y: 60, opacity: 0 },
     animate: { y: 0, opacity: 1 },
     transition: { duration: 0.6, ease: "easeOut" },
-  };
-
-  const staggerContainer = {
+  },
+  staggerContainer: {
     animate: {
       transition: {
         staggerChildren: 0.1,
       },
     },
-  };
-
-  const socialIconsAnimation = {
+  },
+  socialIconsAnimation: {
     initial: { x: 100, opacity: 0 },
     animate: { x: 0, opacity: 1 },
     transition: { duration: 0.5, ease: "easeOut" },
-  };
+  },
+};
+
+export function Hero() {
+  const socialLinks = [
+    { id: "fb-social", icon: RiFacebookFill, href: "#", label: "Facebook" },
+    { id: "ig-social", icon: RiInstagramLine, href: "#", label: "Instagram" },
+    { id: "tw-social", icon: RiTwitterFill, href: "#", label: "Twitter" },
+    { id: "yt-social", icon: RiYoutubeFill, href: "#", label: "YouTube" },
+  ];
 
   return (
-    <div className="relative w-full h-[700px] overflow-hidden">
+    <div className="relative w-full h-[600px] md:h-[700px] overflow-hidden">
       {/* Imagen de fondo con zoom suave */}
       <motion.div
         initial={{ scale: 1.2 }}
@@ -53,45 +54,49 @@ export function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative h-full">
         {/* Contenido superpuesto */}
         <motion.div
-          variants={staggerContainer}
+          variants={animations.staggerContainer}
           initial="initial"
           animate="animate"
           className="relative z-10 h-full flex items-center"
         >
-          <div className="w-full md:w-2/3 space-y-6">
+          <div className="w-full space-y-6">
             <div className="space-y-2">
               <motion.h1
-                variants={fadeInUp}
-                className="font-title text-9xl font-bold text-white tracking-tight"
+                variants={animations.fadeInUp}
+                className="font-title text-6xl md:text-9xl font-bold text-white tracking-tight"
               >
                 Cultural
               </motion.h1>
               <motion.h2
-                variants={fadeInUp}
-                className="font-title text-8xl font-bold text-white tracking-tight"
+                variants={animations.fadeInUp}
+                className="font-title text-5xl md:text-8xl font-bold text-white tracking-tight"
               >
                 Fest
               </motion.h2>
             </div>
 
-            <motion.div variants={fadeInUp} className="space-y-4">
-              <div className="flex gap-52">
+            <motion.div variants={animations.fadeInUp} className="space-y-4">
+              <div className="flex flex-col md:flex-row md:gap-52 gap-4">
                 <motion.p
-                  variants={fadeInUp}
-                  className="font-sans text-3xl font-medium text-white"
+                  variants={animations.fadeInUp}
+                  className="font-sans text-2xl md:text-3xl font-medium text-white"
                 >
-                  28-29 <span className="text-primary">/</span> <br />{" "}
-                  <span className="font-medium text-2xl">Diciembre</span>
+                  28-29 <span className="text-primary">/</span> <br />
+                  <span className="font-medium text-xl md:text-2xl">
+                    Diciembre
+                  </span>
                 </motion.p>
                 <motion.p
-                  variants={fadeInUp}
-                  className="font-sans text-3xl font-medium text-white"
+                  variants={animations.fadeInUp}
+                  className="font-sans text-2xl md:text-3xl font-medium text-white"
                 >
-                  Motril <span className="text-primary">/</span> <br />{" "}
-                  <span className="font-medium text-2xl">Granada</span>
+                  Motril <span className="text-primary">/</span> <br />
+                  <span className="font-medium text-xl md:text-2xl">
+                    Granada
+                  </span>
                 </motion.p>
               </div>
-              <motion.div variants={fadeInUp} className="pt-12">
+              <motion.div variants={animations.fadeInUp} className="pt-12">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -112,9 +117,9 @@ export function Hero() {
           className="absolute bottom-8 right-0 z-10"
         >
           <div className="flex flex-col gap-4">
-            {socialLinks.map(({ icon: Icon, href, label }, index) => (
+            {socialLinks.map(({ id, icon: Icon, href, label }, index) => (
               <motion.div
-                key={label}
+                key={id}
                 initial={{ x: 50, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 1 + index * 0.1, duration: 0.3 }}
